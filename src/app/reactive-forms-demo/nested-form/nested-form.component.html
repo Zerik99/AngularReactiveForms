@@ -1,0 +1,60 @@
+
+<mat-card>
+
+  <mat-card-title>Nested Form Groups with Angular's Reactive Forms</mat-card-title>
+
+  <mat-card-content>
+
+    <mat-card-subtitle class="form-value-subtitle">Value: {{myForm.value | json}}</mat-card-subtitle>
+
+    <mat-divider></mat-divider>
+
+    <form [formGroup]="myForm">
+
+      <mat-card-subtitle>Email</mat-card-subtitle>
+
+      <mat-form-field>
+        <input matInput placeholder="example@email.com" formControlName="email">
+      </mat-form-field>
+
+      <mat-card-subtitle>Home Phone</mat-card-subtitle>
+
+      <form class="nested-form" formGroupName="cellPhone">
+
+        <mat-form-field class="phone-input">
+          <input matInput placeholder="area" formControlName="area">
+        </mat-form-field>
+
+        <mat-form-field class="phone-input">
+          <input matInput placeholder="prefix" formControlName="prefix">
+        </mat-form-field>
+
+        <mat-form-field class="phone-input">
+          <input matInput placeholder="line" formControlName="line">
+        </mat-form-field>
+
+      </form>
+
+      <mat-card-subtitle>Cell Phone</mat-card-subtitle>
+
+      <form class="nested-form" formGroupName="cellPhone">
+
+        <mat-form-field class="phone-input">
+          <input matInput placeholder="area" formControlName="area">
+        </mat-form-field>
+
+        <mat-form-field class="phone-input">
+          <input matInput placeholder="prefix" formControlName="prefix">
+        </mat-form-field>
+
+        <mat-form-field class="phone-input">
+          <input matInput placeholder="line" formControlName="line">
+        </mat-form-field>
+
+      </form>
+
+    </form>
+
+  </mat-card-content>
+
+</mat-card>

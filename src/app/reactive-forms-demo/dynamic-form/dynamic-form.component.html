@@ -1,0 +1,41 @@
+
+<mat-card>
+  <mat-card-title>Dynamic Forms with Angular's Reactive Forms</mat-card-title>
+
+  <mat-card-content>
+    <mat-card-subtitle class="form-value-subtitle">Value: {{myForm.value | json}}</mat-card-subtitle>
+
+    <mat-divider></mat-divider>
+
+    <form [formGroup]="myForm">
+      <mat-card-subtitle>Email</mat-card-subtitle>
+
+      <mat-form-field>
+        <input matInput placeholder="example@email.com" formControlName="email">
+      </mat-form-field>
+
+      <div class="phones-array-subtitle">
+        <mat-card-subtitle>Phones</mat-card-subtitle>
+        <button mat-button (click)="addPhone()">Add +</button>
+      </div>
+
+      <div formArrayName="phones">
+        <form class="nested-form" *ngFor="let phone of phoneForms.controls; let i=index" [formGroupName]="i">
+          <mat-form-field class="phone-input">
+            <input matInput placeholder="area" formControlName="area">
+          </mat-form-field>
+
+          <mat-form-field class="phone-input">
+            <input matInput placeholder="prefix" formControlName="prefix">
+          </mat-form-field>
+
+          <mat-form-field class="phone-input">
+            <input matInput placeholder="line" formControlName="line">
+          </mat-form-field>
+
+          <button mat-button color="warn" (click)="deletePhone(i)">delete</button>
+        </form>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

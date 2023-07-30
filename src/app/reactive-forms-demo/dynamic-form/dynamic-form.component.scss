@@ -1,0 +1,85 @@
+mat-card {
+  display: flex;
+  align-items: center; /* Center the items horizontally and vertically */
+  width: 100%;
+  padding: 5%;
+  background-color: whitesmoke;
+
+  mat-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
+    border-radius: 1rem;
+    box-shadow: 1px 15px 74px -47px rgba(0, 0, 0, 1);
+    -webkit-box-shadow: 1px 15px 74px -47px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 1px 15px 74px -47px rgba(0, 0, 0, 1);
+    background-color: white;
+    width: 100%;
+    min-width:25%;
+    max-width: 50%;
+    padding: 2%;
+
+    mat-card-subtitle.form-value-subtitle {
+      display: flex;
+      flex-wrap: wrap;
+      align-self: flex-start;
+      padding-bottom: 1rem;
+      height: auto;
+      width:100%;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* Center the content horizontally */
+      width: 100%;
+      min-width: min-content;
+
+      mat-card-subtitle{
+        display: flex;
+        flex-wrap: wrap;
+        align-self: flex-start;
+        padding-bottom: 1rem;
+        height: auto;
+        width:100%;
+      }
+
+      div.phones-array-subtitle{
+        display: flex;
+        flex-direction: row;
+        align-self: flex-start;
+        align-items: center;
+        width: 100px;
+        margin-bottom: 1rem;
+
+        mat-card-subtitle{
+          margin-top: 1rem;
+          margin-inline-end: 1rem;
+        }
+
+      }
+
+      mat-form-field {
+        display: flex;
+        width: 100%;
+        min-width: 8rem;
+
+      }
+
+      form.nested-form {
+        display: flex;
+        flex-direction: row;
+        align-items: center; /* Center the content horizontally */
+        width: 100%;
+        min-width: min-content;
+
+        mat-form-field.phone-input {
+          display: flex;
+          margin-inline-end: 1%;
+          width: 100%;
+          min-width: 8rem;
+        }
+      }
+    }
+  }
+}
